@@ -3,17 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061B2349EAF62B6C1033AEE8 /* Pods_MtG_Deck_BuilderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A7DA88F8CA0C64D18D7DCC /* Pods_MtG_Deck_BuilderUITests.framework */; };
+		53D57442806D38730EE0696F /* Pods_MtG_Deck_Builder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6F244B836BE84177A7B8D6 /* Pods_MtG_Deck_Builder.framework */; };
+		C9411CE165491F5968A76027 /* Pods_MtG_Deck_BuilderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922C568CD74D2AED784BF57E /* Pods_MtG_Deck_BuilderTests.framework */; };
+		E4A4764B22F441B300702AAB /* CardsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4764A22F441B300702AAB /* CardsResponse.swift */; };
 		E4D9AC5222AA4F3900EB4E1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D9AC5122AA4F3900EB4E1C /* AppDelegate.swift */; };
-		E4D9AC5422AA4F3900EB4E1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D9AC5322AA4F3900EB4E1C /* ViewController.swift */; };
-		E4D9AC5722AA4F3900EB4E1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4D9AC5522AA4F3900EB4E1C /* Main.storyboard */; };
+		E4D9AC5422AA4F3900EB4E1C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D9AC5322AA4F3900EB4E1C /* MainViewController.swift */; };
 		E4D9AC5922AA4F3B00EB4E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4D9AC5822AA4F3B00EB4E1C /* Assets.xcassets */; };
 		E4D9AC5C22AA4F3B00EB4E1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4D9AC5A22AA4F3B00EB4E1C /* LaunchScreen.storyboard */; };
 		E4D9AC6722AA4F3B00EB4E1C /* MtG_Deck_BuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D9AC6622AA4F3B00EB4E1C /* MtG_Deck_BuilderTests.swift */; };
 		E4D9AC7222AA4F3B00EB4E1C /* MtG_Deck_BuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D9AC7122AA4F3B00EB4E1C /* MtG_Deck_BuilderUITests.swift */; };
+		E4E2A8A122AAAD8F00F845DB /* CardsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2A8A022AAAD8F00F845DB /* CardsService.swift */; };
+		E4E2A8A522AAB11200F845DB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2A8A422AAB11200F845DB /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +39,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16A7DA88F8CA0C64D18D7DCC /* Pods_MtG_Deck_BuilderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MtG_Deck_BuilderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28B9CF37B20D88347EFFA06D /* Pods-MtG Deck BuilderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Deck BuilderUITests.release.xcconfig"; path = "Target Support Files/Pods-MtG Deck BuilderUITests/Pods-MtG Deck BuilderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3989EEA04631FFD3F6AC5133 /* Pods-MtG Deck BuilderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Deck BuilderUITests.debug.xcconfig"; path = "Target Support Files/Pods-MtG Deck BuilderUITests/Pods-MtG Deck BuilderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		50BD8F51EE26C509DC12CACC /* Pods-MtG Deck Builder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Deck Builder.debug.xcconfig"; path = "Target Support Files/Pods-MtG Deck Builder/Pods-MtG Deck Builder.debug.xcconfig"; sourceTree = "<group>"; };
+		5B6F244B836BE84177A7B8D6 /* Pods_MtG_Deck_Builder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MtG_Deck_Builder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		640F311ABD532EDB71AE2C4E /* Pods-MtG Deck BuilderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Deck BuilderTests.release.xcconfig"; path = "Target Support Files/Pods-MtG Deck BuilderTests/Pods-MtG Deck BuilderTests.release.xcconfig"; sourceTree = "<group>"; };
+		922C568CD74D2AED784BF57E /* Pods_MtG_Deck_BuilderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MtG_Deck_BuilderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3785CC3A38DC591AF3B4A52 /* Pods-MtG Deck BuilderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Deck BuilderTests.debug.xcconfig"; path = "Target Support Files/Pods-MtG Deck BuilderTests/Pods-MtG Deck BuilderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C65193DF0808C124383FB4F1 /* Pods-MtG Deck Builder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Deck Builder.release.xcconfig"; path = "Target Support Files/Pods-MtG Deck Builder/Pods-MtG Deck Builder.release.xcconfig"; sourceTree = "<group>"; };
+		E4A4764A22F441B300702AAB /* CardsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsResponse.swift; sourceTree = "<group>"; };
 		E4D9AC4E22AA4F3900EB4E1C /* MtG Deck Builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MtG Deck Builder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4D9AC5122AA4F3900EB4E1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E4D9AC5322AA4F3900EB4E1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E4D9AC5622AA4F3900EB4E1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4D9AC5322AA4F3900EB4E1C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E4D9AC5822AA4F3B00EB4E1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4D9AC5B22AA4F3B00EB4E1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4D9AC5D22AA4F3B00EB4E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +61,8 @@
 		E4D9AC6D22AA4F3B00EB4E1C /* MtG Deck BuilderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MtG Deck BuilderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4D9AC7122AA4F3B00EB4E1C /* MtG_Deck_BuilderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MtG_Deck_BuilderUITests.swift; sourceTree = "<group>"; };
 		E4D9AC7322AA4F3B00EB4E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4E2A8A022AAAD8F00F845DB /* CardsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsService.swift; sourceTree = "<group>"; };
+		E4E2A8A422AAB11200F845DB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D57442806D38730EE0696F /* Pods_MtG_Deck_Builder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9411CE165491F5968A76027 /* Pods_MtG_Deck_BuilderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +86,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				061B2349EAF62B6C1033AEE8 /* Pods_MtG_Deck_BuilderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A37A5E3C7DD3EE6383BAC2A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50BD8F51EE26C509DC12CACC /* Pods-MtG Deck Builder.debug.xcconfig */,
+				C65193DF0808C124383FB4F1 /* Pods-MtG Deck Builder.release.xcconfig */,
+				B3785CC3A38DC591AF3B4A52 /* Pods-MtG Deck BuilderTests.debug.xcconfig */,
+				640F311ABD532EDB71AE2C4E /* Pods-MtG Deck BuilderTests.release.xcconfig */,
+				3989EEA04631FFD3F6AC5133 /* Pods-MtG Deck BuilderUITests.debug.xcconfig */,
+				28B9CF37B20D88347EFFA06D /* Pods-MtG Deck BuilderUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		0A43274F18E5BF372A115869 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B6F244B836BE84177A7B8D6 /* Pods_MtG_Deck_Builder.framework */,
+				922C568CD74D2AED784BF57E /* Pods_MtG_Deck_BuilderTests.framework */,
+				16A7DA88F8CA0C64D18D7DCC /* Pods_MtG_Deck_BuilderUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E4D9AC4522AA4F3900EB4E1C = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +123,8 @@
 				E4D9AC6522AA4F3B00EB4E1C /* MtG Deck BuilderTests */,
 				E4D9AC7022AA4F3B00EB4E1C /* MtG Deck BuilderUITests */,
 				E4D9AC4F22AA4F3900EB4E1C /* Products */,
+				0A37A5E3C7DD3EE6383BAC2A /* Pods */,
+				0A43274F18E5BF372A115869 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,9 +141,9 @@
 		E4D9AC5022AA4F3900EB4E1C /* MtG Deck Builder */ = {
 			isa = PBXGroup;
 			children = (
+				E4E2A89F22AAAD5800F845DB /* data */,
 				E4D9AC5122AA4F3900EB4E1C /* AppDelegate.swift */,
-				E4D9AC5322AA4F3900EB4E1C /* ViewController.swift */,
-				E4D9AC5522AA4F3900EB4E1C /* Main.storyboard */,
+				E4D9AC5322AA4F3900EB4E1C /* MainViewController.swift */,
 				E4D9AC5822AA4F3B00EB4E1C /* Assets.xcassets */,
 				E4D9AC5A22AA4F3B00EB4E1C /* LaunchScreen.storyboard */,
 				E4D9AC5D22AA4F3B00EB4E1C /* Info.plist */,
@@ -125,6 +169,32 @@
 			path = "MtG Deck BuilderUITests";
 			sourceTree = "<group>";
 		};
+		E4E2A89F22AAAD5800F845DB /* data */ = {
+			isa = PBXGroup;
+			children = (
+				E4E2A8A322AAB0FA00F845DB /* model */,
+				E4E2A8A222AAB0E800F845DB /* service */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		E4E2A8A222AAB0E800F845DB /* service */ = {
+			isa = PBXGroup;
+			children = (
+				E4E2A8A022AAAD8F00F845DB /* CardsService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		E4E2A8A322AAB0FA00F845DB /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E4E2A8A422AAB11200F845DB /* Card.swift */,
+				E4A4764A22F441B300702AAB /* CardsResponse.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4D9AC7622AA4F3B00EB4E1C /* Build configuration list for PBXNativeTarget "MtG Deck Builder" */;
 			buildPhases = (
+				FFDE37362CD11E978B09BF0F /* [CP] Check Pods Manifest.lock */,
 				E4D9AC4A22AA4F3900EB4E1C /* Sources */,
 				E4D9AC4B22AA4F3900EB4E1C /* Frameworks */,
 				E4D9AC4C22AA4F3900EB4E1C /* Resources */,
+				CBBA3AA505ABCE9D8A001904 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +221,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4D9AC7922AA4F3B00EB4E1C /* Build configuration list for PBXNativeTarget "MtG Deck BuilderTests" */;
 			buildPhases = (
+				C81F9C457F2476C4DAB2ED39 /* [CP] Check Pods Manifest.lock */,
 				E4D9AC5E22AA4F3B00EB4E1C /* Sources */,
 				E4D9AC5F22AA4F3B00EB4E1C /* Frameworks */,
 				E4D9AC6022AA4F3B00EB4E1C /* Resources */,
@@ -167,6 +240,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4D9AC7C22AA4F3B00EB4E1C /* Build configuration list for PBXNativeTarget "MtG Deck BuilderUITests" */;
 			buildPhases = (
+				ADB9E8BEABA74C346A4740E3 /* [CP] Check Pods Manifest.lock */,
 				E4D9AC6922AA4F3B00EB4E1C /* Sources */,
 				E4D9AC6A22AA4F3B00EB4E1C /* Frameworks */,
 				E4D9AC6B22AA4F3B00EB4E1C /* Resources */,
@@ -231,7 +305,6 @@
 			files = (
 				E4D9AC5C22AA4F3B00EB4E1C /* LaunchScreen.storyboard in Resources */,
 				E4D9AC5922AA4F3B00EB4E1C /* Assets.xcassets in Resources */,
-				E4D9AC5722AA4F3900EB4E1C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +324,102 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ADB9E8BEABA74C346A4740E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MtG Deck BuilderUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C81F9C457F2476C4DAB2ED39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MtG Deck BuilderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBBA3AA505ABCE9D8A001904 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MtG Deck Builder/Pods-MtG Deck Builder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MtG Deck Builder/Pods-MtG Deck Builder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MtG Deck Builder/Pods-MtG Deck Builder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFDE37362CD11E978B09BF0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MtG Deck Builder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E4D9AC4A22AA4F3900EB4E1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4D9AC5422AA4F3900EB4E1C /* ViewController.swift in Sources */,
+				E4D9AC5422AA4F3900EB4E1C /* MainViewController.swift in Sources */,
 				E4D9AC5222AA4F3900EB4E1C /* AppDelegate.swift in Sources */,
+				E4A4764B22F441B300702AAB /* CardsResponse.swift in Sources */,
+				E4E2A8A522AAB11200F845DB /* Card.swift in Sources */,
+				E4E2A8A122AAAD8F00F845DB /* CardsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +455,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E4D9AC5522AA4F3900EB4E1C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4D9AC5622AA4F3900EB4E1C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E4D9AC5A22AA4F3B00EB4E1C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -430,6 +584,7 @@
 		};
 		E4D9AC7722AA4F3B00EB4E1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50BD8F51EE26C509DC12CACC /* Pods-MtG Deck Builder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -447,6 +602,7 @@
 		};
 		E4D9AC7822AA4F3B00EB4E1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C65193DF0808C124383FB4F1 /* Pods-MtG Deck Builder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +620,7 @@
 		};
 		E4D9AC7A22AA4F3B00EB4E1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3785CC3A38DC591AF3B4A52 /* Pods-MtG Deck BuilderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +641,7 @@
 		};
 		E4D9AC7B22AA4F3B00EB4E1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 640F311ABD532EDB71AE2C4E /* Pods-MtG Deck BuilderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,6 +662,7 @@
 		};
 		E4D9AC7D22AA4F3B00EB4E1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3989EEA04631FFD3F6AC5133 /* Pods-MtG Deck BuilderUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +682,7 @@
 		};
 		E4D9AC7E22AA4F3B00EB4E1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28B9CF37B20D88347EFFA06D /* Pods-MtG Deck BuilderUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
