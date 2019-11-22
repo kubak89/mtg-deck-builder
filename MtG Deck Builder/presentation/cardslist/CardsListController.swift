@@ -9,13 +9,13 @@
 import UIKit
 import SnapKit
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CardsListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private let searchTextField: UITextField = UITextField()
     private let resultsView: UITableView = UITableView()
     
     private var cardsArray: [Card] = []
     
-    private let cardsService = CardsService()
+    private let cardsService = CardsRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +23,17 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         initSearchView()
         initResultsView()
         
-        cardsService.searchCards(name: "Wizard", responseHandler: {
-            cards in
-            print(cards)
-            self.cardsArray += cards
-            self.resultsView.reloadData()
-        }, errorHandler:{
-            error in
-            let alert = UIAlertController.init(title: "Error downloading cards", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        })
+        cardsService.rxSearchCards(name: "Wizard").subscribe(
+            onSuccess: { (cards: [Card]) -> Void in
+                print(cards)
+                self.cardsArray += cards.self
+                self.resultsView.reloadData()
+        },
+            onError: { (error: Error) -> Void in
+                let alert = UIAlertController.init(title: "Error downloading cards", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)}
+        )
     }
     
     private func initSearchView() {
