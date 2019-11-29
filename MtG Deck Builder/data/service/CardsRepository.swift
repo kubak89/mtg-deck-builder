@@ -15,8 +15,11 @@ class CardsRepository {
     private let CARDS_URL = "/cards"
     
     func rxSearchCards(name: String) -> Single<[Card]> {
+        let parameters: Parameters = [
+            "name": name
+        ]
         return Single<[Card]>.create { singleEmitter in
-            let request = AF.request(self.buildCardsUrl()).validate(statusCode: 200..<299).responseJSON{ response in
+            let request = AF.request(self.buildCardsUrl(), parameters: parameters).validate(statusCode: 200..<299).responseJSON{ response in
                 do {
                     let decoder = JSONDecoder()
                     if let data = response.data {

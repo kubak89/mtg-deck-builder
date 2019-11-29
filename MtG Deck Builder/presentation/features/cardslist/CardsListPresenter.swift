@@ -21,10 +21,6 @@ class CardsListPresenter {
         self.initialState = initialState
     }
 
-    func getViewStateObservable() -> Observable<CardsListViewState> {
-        return Observable.merge(downloadCards()).scan(initialState, accumulator: reduce)
-    }
-
     private func reduce(previousViewState: CardsListViewState, partialState: CardsListPartialState) throws -> CardsListViewState {
         if (partialState is CardsDownloaded) {
             return previousViewState.copy(newCards: (partialState as! CardsDownloaded).cards)
@@ -33,10 +29,25 @@ class CardsListPresenter {
         }
     }
 
+    func getViewStateObservable() -> Observable<CardsListViewState> {
+        return Observable.merge(downloadCards(), searchCards()).scan(initialState, accumulator: reduce)
+    }
+
+    private func searchCards() -> Observable<CardsListPartialState> {
+        return self.view.searchCardsIntent
+                .debounce(RxTimeInterval.milliseconds(500), scheduler: <#T##SchedulerType##RxSwift.SchedulerType#>)
+                .flatMap { (query: String) -> Observable<CardsListPartialState> in
+                    self.cardsService.rxSearchCards(name: query).map { (cards: [Card]) -> CardsListPartialState in
+                                CardsDownloaded(cards: cards)
+                            }
+                            .asObservable()
+                }
+    }
+
     private func downloadCards() -> Observable<CardsListPartialState> {
         return self.view.downloadCardsIntent.flatMap { (a: Any) -> Observable<CardsListPartialState> in
             self.cardsService
-                    .rxSearchCards(name: "Wizard")
+                    .rxSearchCards(name: "")
                     .map { (cards: [Card]) -> CardsListPartialState in
                         CardsDownloaded(cards: cards)
                     }

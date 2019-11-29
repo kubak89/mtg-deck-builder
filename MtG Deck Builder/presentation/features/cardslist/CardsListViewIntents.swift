@@ -11,4 +11,5 @@ import RxSwift
 
 protocol CardsListViewIntents {
     var downloadCardsIntent: Observable<Any> { get }
+    var searchCardsIntent: Observable<String> { get }
 }

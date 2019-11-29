@@ -12,6 +12,7 @@ import RxSwift
 
 class CardsListController: UIViewController, UITableViewDelegate, UITableViewDataSource, CardsListViewIntents {
     var downloadCardsIntent: Observable<Any> = Observable.just(0)
+    var searchCardsIntent: Observable<String> = PublishSubject()
 
     private var cardsArray: [Card] = []
 
@@ -20,12 +21,14 @@ class CardsListController: UIViewController, UITableViewDelegate, UITableViewDat
     lazy private var cardsView = cardsContainer.container.resolve(CardsListView.self)!
 
     lazy private var cardsListPresenter = CardsListPresenter(view: self, cardsService: cardsService, initialState: CardsListViewState())
-
     private let cardsService = CardsRepository()
+
     private var disposables = CompositeDisposable()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        cardsView.searchTextField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.allEditingEvents)
 
         disposables.insert(
                 cardsListPresenter.getViewStateObservable().subscribe { viewState in
@@ -33,7 +36,9 @@ class CardsListController: UIViewController, UITableViewDelegate, UITableViewDat
                         return
                     }
                     self.cardsArray = newCards
-                    self.cardsView.resultsView.reloadData()
+                    DispatchQueue.main.async {
+                        self.cardsView.resultsView.reloadData()
+                    }
                 })
     }
 
@@ -41,6 +46,10 @@ class CardsListController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidDisappear(animated)
 
         disposables.dispose()
+    }
+
+    @objc func textFieldDidChange(textField: UITextField) {
+        (searchCardsIntent as! PublishSubject<String>).onNext(textField.text ?? "")
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
