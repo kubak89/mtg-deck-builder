@@ -8,67 +8,45 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
-class CardsListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    private let searchTextField: UITextField = UITextField()
-    private let resultsView: UITableView = UITableView()
-    
+class CardsListController: UIViewController, UITableViewDelegate, UITableViewDataSource, CardsListViewIntents {
+    var downloadCardsIntent: Observable<Any> = Observable.just(0)
+
     private var cardsArray: [Card] = []
-    
+
+    lazy private var cardsContainer = CardsListContainer(cardsListController: self)
+
+    lazy private var cardsView = cardsContainer.container.resolve(CardsListView.self)!
+
+    lazy private var cardsListPresenter = CardsListPresenter(view: self, cardsService: cardsService, initialState: CardsListViewState())
+
     private let cardsService = CardsRepository()
-    
+    private var disposables = CompositeDisposable()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        initSearchView()
-        initResultsView()
-        
-        cardsService.rxSearchCards(name: "Wizard").subscribe(
-            onSuccess: { (cards: [Card]) -> Void in
-                print(cards)
-                self.cardsArray += cards.self
-                self.resultsView.reloadData()
-        },
-            onError: { (error: Error) -> Void in
-                let alert = UIAlertController.init(title: "Error downloading cards", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.present(alert, animated: true, completion: nil)}
-        )
+
+        disposables.insert(
+                cardsListPresenter.getViewStateObservable().subscribe { viewState in
+                    guard let newCards = viewState.element?.cardsList else {
+                        return
+                    }
+                    self.cardsArray = newCards
+                    self.cardsView.resultsView.reloadData()
+                })
     }
-    
-    private func initSearchView() {
-        view.addSubview(searchTextField)
-        
-        searchTextField.font = UIFont.systemFont(ofSize: 25)
-        searchTextField.snp.makeConstraints{
-            (make) -> Void in
-            make.margins.topMargin.equalTo(15)
-            make.left.equalTo(view).inset(15)
-            make.right.equalTo(view).inset(15)
-            make.height.equalTo(100)
-        }
-        searchTextField.placeholder = "Search"
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        disposables.dispose()
     }
-    
-    private func initResultsView() {
-        view.addSubview(resultsView)
-        
-        resultsView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
-        resultsView.dataSource = self
-        resultsView.delegate = self
-        resultsView.snp.makeConstraints {
-            (make) -> Void in
-            make.top.equalTo(searchTextField.snp.bottom)
-            make.left.equalTo(view)
-            make.right.equalTo(view)
-            make.bottom.equalTo(view)
-        }
-    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cardsArray.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
         cell.textLabel!.text = "\(cardsArray[indexPath.row])"

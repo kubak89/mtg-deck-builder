@@ -9,15 +9,21 @@
 import Foundation
 
 struct CardsListViewState {
-    let cardsList : [Card]
-    let downloadError : Error?
-    
+    let cardsList: [Card]
+    let downloadError: Error?
+
+    init(cardsList: [Card] = [], downloadError: Error? = nil) {
+        self.cardsList = cardsList
+        self.downloadError = downloadError
+    }
+
     func copy(newCards: [Card]? = nil, newDownloadError: Error? = nil) -> CardsListViewState {
         return CardsListViewState(cardsList: newCards ?? cardsList, downloadError: newDownloadError ?? downloadError)
     }
 }
 
-protocol CardsListPartialState { }
+protocol CardsListPartialState {
+}
 
 struct CardsDownloaded: CardsListPartialState {
     let cards: [Card]
