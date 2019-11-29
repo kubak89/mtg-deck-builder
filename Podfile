@@ -15,10 +15,12 @@ target 'MtG Deck Builder' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   
-  pod 'SwiftyJSON', '~> 4.0'
+  pod 'SwiftyJSON', '~> 5.0.0'
   
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
+
+  pod 'Swinject', '~> 2.7.1'
 
   # Pods for MtG Deck Builder
 
