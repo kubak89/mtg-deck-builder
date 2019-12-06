@@ -22,6 +22,8 @@ target 'MtG Deck Builder' do
 
   pod 'Swinject', '~> 2.7.1'
 
+  pod 'AlamofireNetworkActivityLogger', '~> 3.0'
+
   # Pods for MtG Deck Builder
 
   target 'MtG Deck BuilderTests' do

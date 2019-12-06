@@ -13,13 +13,11 @@ import RxSwift
 class CardsRepository {
     private let BASE_URL = "https://api.magicthegathering.io/v1"
     private let CARDS_URL = "/cards"
-    
+
     func rxSearchCards(name: String) -> Single<[Card]> {
-        let parameters: Parameters = [
-            "name": name
-        ]
+        let parameters: Parameters = ["name": name]
         return Single<[Card]>.create { singleEmitter in
-            let request = AF.request(self.buildCardsUrl(), parameters: parameters).validate(statusCode: 200..<299).responseJSON{ response in
+            let request = AF.request(self.buildCardsUrl(), parameters: parameters).validate(statusCode: 200..<299).responseJSON { response in
                 do {
                     let decoder = JSONDecoder()
                     if let data = response.data {
@@ -31,17 +29,19 @@ class CardsRepository {
                     singleEmitter(SingleEvent.error(error))
                 }
             }
-            
-            return Disposables.create { request.cancel()  }
+
+            return Disposables.create {
+                request.cancel()
+            }
         }
     }
-    
+
     func buildCardsUrl() -> String {
         return self.buildUrl(endpointPath: self.CARDS_URL)
     }
-    
+
     private func buildUrl(endpointPath: String) -> String {
         return BASE_URL + endpointPath
     }
-    
+
 }

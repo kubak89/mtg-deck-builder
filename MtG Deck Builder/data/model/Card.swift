@@ -13,7 +13,7 @@ struct Card: Codable {
     let name: String
     let names: [String]?
     let manaCost: String?
-    let cmc: Int
+    let cmc: Int?
     let colors, colorIdentity: [String]
     let type: String
     let supertypes, types, subtypes: [String]
@@ -46,7 +46,7 @@ struct Card: Codable {
 // MARK: - ForeignName
 struct ForeignName: Codable {
     let name, language: String
-    let multiverseid: Int
+    let multiverseid: Int?
 }
 
 // MARK: - Ruling

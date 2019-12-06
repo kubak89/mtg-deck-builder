@@ -24,6 +24,8 @@ class CardsListPresenter {
     private func reduce(previousViewState: CardsListViewState, partialState: CardsListPartialState) throws -> CardsListViewState {
         if (partialState is CardsDownloaded) {
             return previousViewState.copy(newCards: (partialState as! CardsDownloaded).cards)
+        } else if (partialState is DownloadError) {
+            return previousViewState.copy(newDownloadError: (partialState as! DownloadError).error)
         } else {
             throw NSError()
         }
@@ -35,12 +37,17 @@ class CardsListPresenter {
 
     private func searchCards() -> Observable<CardsListPartialState> {
         return self.view.searchCardsIntent
-                .debounce(RxTimeInterval.milliseconds(500), scheduler: <#T##SchedulerType##RxSwift.SchedulerType#>)
-                .flatMap { (query: String) -> Observable<CardsListPartialState> in
-                    self.cardsService.rxSearchCards(name: query).map { (cards: [Card]) -> CardsListPartialState in
+                .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler())
+                .flatMapLatest { (query: String) -> Observable<CardsListPartialState> in
+                    self.cardsService
+                            .rxSearchCards(name: query)
+                            .map { (cards: [Card]) -> CardsListPartialState in
                                 CardsDownloaded(cards: cards)
                             }
                             .asObservable()
+                            .catchError { error in
+                                Observable.just(DownloadError(error: error))
+                            }
                 }
     }
 

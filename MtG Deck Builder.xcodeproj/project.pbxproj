@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		061B2349EAF62B6C1033AEE8 /* Pods_MtG_Deck_BuilderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A7DA88F8CA0C64D18D7DCC /* Pods_MtG_Deck_BuilderUITests.framework */; };
 		53D57442806D38730EE0696F /* Pods_MtG_Deck_Builder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6F244B836BE84177A7B8D6 /* Pods_MtG_Deck_Builder.framework */; };
+		5652D08FC4B38CC7262A7DA5 /* CardsListViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5652D6EFEC642C05BAA2301B /* CardsListViewState.swift */; };
+		5652D1921A0188CAA1708C69 /* CardsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5652D3F25A4E8E2545B89CD8 /* CardsListController.swift */; };
+		5652D7B27CBEE8B37DCBDB1E /* CardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5652D5753CBCC6801A82BF72 /* CardsListView.swift */; };
+		5652D902399F6EC16B6340C3 /* CardsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5652D428AEBF74897A3F8C3F /* CardsListPresenter.swift */; };
+		5652DBF187B02BE02203B4B4 /* CardsListViewIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5652DB0CD6B041135EBA1263 /* CardsListViewIntents.swift */; };
+		5652DC6D989DA31F815F928A /* CardsListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5652DE70489D4BFFBF3CE414 /* CardsListContainer.swift */; };
 		C9411CE165491F5968A76027 /* Pods_MtG_Deck_BuilderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922C568CD74D2AED784BF57E /* Pods_MtG_Deck_BuilderTests.framework */; };
 		E4A4764B22F441B300702AAB /* CardsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4764A22F441B300702AAB /* CardsResponse.swift */; };
-		E4BBE6C523756EF20053E2D2 /* CardsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBE6C423756EF20053E2D2 /* CardsListPresenter.swift */; };
-		E4BBE6C723756F2B0053E2D2 /* CardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBE6C623756F2B0053E2D2 /* CardsListView.swift */; };
-		E4BBE6C92375733F0053E2D2 /* CardsListViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBE6C82375733F0053E2D2 /* CardsListViewState.swift */; };
 		E4D9AC5222AA4F3900EB4E1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D9AC5122AA4F3900EB4E1C /* AppDelegate.swift */; };
-		E4D9AC5422AA4F3900EB4E1C /* CardsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D9AC5322AA4F3900EB4E1C /* CardsListController.swift */; };
 		E4D9AC5922AA4F3B00EB4E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4D9AC5822AA4F3B00EB4E1C /* Assets.xcassets */; };
 		E4D9AC5C22AA4F3B00EB4E1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4D9AC5A22AA4F3B00EB4E1C /* LaunchScreen.storyboard */; };
 		E4D9AC6722AA4F3B00EB4E1C /* MtG_Deck_BuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D9AC6622AA4F3B00EB4E1C /* MtG_Deck_BuilderTests.swift */; };
@@ -46,18 +48,20 @@
 		28B9CF37B20D88347EFFA06D /* Pods-MtG Deck BuilderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Deck BuilderUITests.release.xcconfig"; path = "Target Support Files/Pods-MtG Deck BuilderUITests/Pods-MtG Deck BuilderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3989EEA04631FFD3F6AC5133 /* Pods-MtG Deck BuilderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Deck BuilderUITests.debug.xcconfig"; path = "Target Support Files/Pods-MtG Deck BuilderUITests/Pods-MtG Deck BuilderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		50BD8F51EE26C509DC12CACC /* Pods-MtG Deck Builder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Deck Builder.debug.xcconfig"; path = "Target Support Files/Pods-MtG Deck Builder/Pods-MtG Deck Builder.debug.xcconfig"; sourceTree = "<group>"; };
+		5652D3F25A4E8E2545B89CD8 /* CardsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsListController.swift; sourceTree = "<group>"; };
+		5652D428AEBF74897A3F8C3F /* CardsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsListPresenter.swift; sourceTree = "<group>"; };
+		5652D5753CBCC6801A82BF72 /* CardsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsListView.swift; sourceTree = "<group>"; };
+		5652D6EFEC642C05BAA2301B /* CardsListViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsListViewState.swift; sourceTree = "<group>"; };
+		5652DB0CD6B041135EBA1263 /* CardsListViewIntents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsListViewIntents.swift; sourceTree = "<group>"; };
+		5652DE70489D4BFFBF3CE414 /* CardsListContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsListContainer.swift; sourceTree = "<group>"; };
 		5B6F244B836BE84177A7B8D6 /* Pods_MtG_Deck_Builder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MtG_Deck_Builder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		640F311ABD532EDB71AE2C4E /* Pods-MtG Deck BuilderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Deck BuilderTests.release.xcconfig"; path = "Target Support Files/Pods-MtG Deck BuilderTests/Pods-MtG Deck BuilderTests.release.xcconfig"; sourceTree = "<group>"; };
 		922C568CD74D2AED784BF57E /* Pods_MtG_Deck_BuilderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MtG_Deck_BuilderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3785CC3A38DC591AF3B4A52 /* Pods-MtG Deck BuilderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Deck BuilderTests.debug.xcconfig"; path = "Target Support Files/Pods-MtG Deck BuilderTests/Pods-MtG Deck BuilderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C65193DF0808C124383FB4F1 /* Pods-MtG Deck Builder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Deck Builder.release.xcconfig"; path = "Target Support Files/Pods-MtG Deck Builder/Pods-MtG Deck Builder.release.xcconfig"; sourceTree = "<group>"; };
 		E4A4764A22F441B300702AAB /* CardsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsResponse.swift; sourceTree = "<group>"; };
-		E4BBE6C423756EF20053E2D2 /* CardsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListPresenter.swift; sourceTree = "<group>"; };
-		E4BBE6C623756F2B0053E2D2 /* CardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListView.swift; sourceTree = "<group>"; };
-		E4BBE6C82375733F0053E2D2 /* CardsListViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListViewState.swift; sourceTree = "<group>"; };
 		E4D9AC4E22AA4F3900EB4E1C /* MtG Deck Builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MtG Deck Builder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4D9AC5122AA4F3900EB4E1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E4D9AC5322AA4F3900EB4E1C /* CardsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListController.swift; sourceTree = "<group>"; };
 		E4D9AC5822AA4F3B00EB4E1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4D9AC5B22AA4F3B00EB4E1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4D9AC5D22AA4F3B00EB4E1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,23 +126,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5652DE1E4A21A7546D061282 /* features */ = {
+			isa = PBXGroup;
+			children = (
+				5652DFF21874B1A71EA35170 /* cardslist */,
+			);
+			path = features;
+			sourceTree = "<group>";
+		};
+		5652DFF21874B1A71EA35170 /* cardslist */ = {
+			isa = PBXGroup;
+			children = (
+				5652D3F25A4E8E2545B89CD8 /* CardsListController.swift */,
+				5652D428AEBF74897A3F8C3F /* CardsListPresenter.swift */,
+				5652DB0CD6B041135EBA1263 /* CardsListViewIntents.swift */,
+				5652D6EFEC642C05BAA2301B /* CardsListViewState.swift */,
+				5652DE70489D4BFFBF3CE414 /* CardsListContainer.swift */,
+				5652D5753CBCC6801A82BF72 /* CardsListView.swift */,
+			);
+			path = cardslist;
+			sourceTree = "<group>";
+		};
 		E4BBE6C223756EB30053E2D2 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
-				E4BBE6C323756EBB0053E2D2 /* cardslist */,
+				5652DE1E4A21A7546D061282 /* features */,
 			);
 			path = presentation;
-			sourceTree = "<group>";
-		};
-		E4BBE6C323756EBB0053E2D2 /* cardslist */ = {
-			isa = PBXGroup;
-			children = (
-				E4D9AC5322AA4F3900EB4E1C /* CardsListController.swift */,
-				E4BBE6C423756EF20053E2D2 /* CardsListPresenter.swift */,
-				E4BBE6C623756F2B0053E2D2 /* CardsListView.swift */,
-				E4BBE6C82375733F0053E2D2 /* CardsListViewState.swift */,
-			);
-			path = cardslist;
 			sourceTree = "<group>";
 		};
 		E4D9AC4522AA4F3900EB4E1C = {
@@ -440,14 +454,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4BBE6C92375733F0053E2D2 /* CardsListViewState.swift in Sources */,
-				E4D9AC5422AA4F3900EB4E1C /* CardsListController.swift in Sources */,
 				E4D9AC5222AA4F3900EB4E1C /* AppDelegate.swift in Sources */,
 				E4A4764B22F441B300702AAB /* CardsResponse.swift in Sources */,
 				E4E2A8A522AAB11200F845DB /* Card.swift in Sources */,
-				E4BBE6C523756EF20053E2D2 /* CardsListPresenter.swift in Sources */,
-				E4BBE6C723756F2B0053E2D2 /* CardsListView.swift in Sources */,
 				E4E2A8A122AAAD8F00F845DB /* CardsRepository.swift in Sources */,
+				5652D1921A0188CAA1708C69 /* CardsListController.swift in Sources */,
+				5652D902399F6EC16B6340C3 /* CardsListPresenter.swift in Sources */,
+				5652DBF187B02BE02203B4B4 /* CardsListViewIntents.swift in Sources */,
+				5652D08FC4B38CC7262A7DA5 /* CardsListViewState.swift in Sources */,
+				5652DC6D989DA31F815F928A /* CardsListContainer.swift in Sources */,
+				5652D7B27CBEE8B37DCBDB1E /* CardsListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

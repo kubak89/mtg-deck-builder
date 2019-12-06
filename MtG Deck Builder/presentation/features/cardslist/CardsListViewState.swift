@@ -28,3 +28,7 @@ protocol CardsListPartialState {
 struct CardsDownloaded: CardsListPartialState {
     let cards: [Card]
 }
+
+struct DownloadError: CardsListPartialState {
+    let error: Error
+}

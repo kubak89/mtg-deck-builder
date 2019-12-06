@@ -32,14 +32,18 @@ class CardsListController: UIViewController, UITableViewDelegate, UITableViewDat
 
         disposables.insert(
                 cardsListPresenter.getViewStateObservable().subscribe { viewState in
-                    guard let newCards = viewState.element?.cardsList else {
-                        return
-                    }
-                    self.cardsArray = newCards
-                    DispatchQueue.main.async {
-                        self.cardsView.resultsView.reloadData()
+                    if (viewState.element != nil) {
+                        self.render(viewState: viewState.element!)
                     }
                 })
+    }
+
+    private func render(viewState: CardsListViewState) {
+        let newCards: [Card] = viewState.cardsList
+        self.cardsArray = newCards
+        DispatchQueue.main.async {
+            self.cardsView.resultsView.reloadData()
+        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
