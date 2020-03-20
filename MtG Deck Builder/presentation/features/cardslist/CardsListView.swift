@@ -16,6 +16,8 @@ class CardsListView {
     init(mainView: UIView, tableViewDataSource: UITableViewDataSource, tableViewDelegate: UITableViewDelegate) {
         self.tableViewDataSource = tableViewDataSource
         self.tableViewDelegate = tableViewDelegate
+        
+        //TODO: Add loading view
 
         initSearchView(view: mainView)
         initResultsView(view: mainView)
@@ -23,6 +25,8 @@ class CardsListView {
 
     private func initSearchView(view: UIView) {
         view.addSubview(searchTextField)
+        
+        //TODO: Fix positioning so the search view isn't obscured by the nav bar
 
         searchTextField.font = UIFont.systemFont(ofSize: 25)
         searchTextField.snp.makeConstraints {

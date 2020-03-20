@@ -63,6 +63,17 @@ class CardsListController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
         cell.textLabel!.text = "\(cardsArray[indexPath.row])"
+        cell.tag = indexPath.row
+        cell.addGestureRecognizer(UITapGestureRecognizer(
+            target: self, action:  #selector (self.openCardDetails (_:))))
         return cell
+    }
+    
+    @objc func openCardDetails(_ sender: UITapGestureRecognizer) {
+        let cardDetailsController = CardsDetailsController()
+        cardDetailsController.card = cardsArray[sender.view!.tag]
+    
+        cardDetailsController.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(cardDetailsController,animated:true)
     }
 }
