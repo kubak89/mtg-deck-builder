@@ -20,6 +20,10 @@ class CardsListPresenter {
         self.cardsService = cardsService
         self.initialState = initialState
     }
+    
+    func getViewStateObservable() -> Observable<CardsListViewState> {
+        return Observable.merge(downloadCards(), searchCards()).scan(initialState, accumulator: reduce)
+    }
 
     private func reduce(previousViewState: CardsListViewState, partialState: CardsListPartialState) throws -> CardsListViewState {
         if (partialState is CardsDownloaded) {
@@ -29,10 +33,6 @@ class CardsListPresenter {
         } else {
             throw NSError()
         }
-    }
-
-    func getViewStateObservable() -> Observable<CardsListViewState> {
-        return Observable.merge(downloadCards(), searchCards()).scan(initialState, accumulator: reduce)
     }
 
     private func searchCards() -> Observable<CardsListPartialState> {
