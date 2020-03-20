@@ -31,7 +31,7 @@ class CardsListView {
         searchTextField.font = UIFont.systemFont(ofSize: 25)
         searchTextField.snp.makeConstraints {
             (make) -> Void in
-            make.top.equalTo(view).inset(15)
+            make.top.equalTo(view.safeAreaLayoutGuide)
             make.left.equalTo(view).inset(15)
             make.right.equalTo(view).inset(15)
             make.height.equalTo(100)
